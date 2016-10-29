@@ -120,6 +120,9 @@ class TdxTrader:
             broker = 'xnzq'
         elif broker == '':
             broker = 'hbzq'
+        if (broker in self.config) == False:
+            print('暂时不支持此券商,请自己添加config配置信息')
+            return 
         self.account_id = id
         self.lOrderColumn = self.config[broker]['lOrderColumn']
         self.lTradeColumn = self.config[broker]['lTradeColumn']
@@ -166,6 +169,7 @@ class TdxTrader:
         #获取所有控件句柄
         hwnd1 = pywinauto.findwindows.find_window(class_name='TdxW_MainFrame_Class',title_re=self.title_re_)
         if hwnd1 == 0 :
+            print('未找到通达信窗口，请先打开通达信客户端并登陆')
             return False
         self.hTdxMain = hwnd1
         win32gui.ShowWindow(self.hTdxMain,win32con.SW_NORMAL)
