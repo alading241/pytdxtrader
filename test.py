@@ -3,7 +3,7 @@ sys.path.append('..')
 import pytdxtrader
 #创建user, 参数(账号,券商代码),账号目前未使用，券商代码目前支持hbzq, xnzq, axzq
 # 若要添加新通达信支持，请参看tdxtrader.py->47行config变量的配置
-user = pytdxtrader.TdxTrader('1234','hxbzq')
+user = pytdxtrader.TdxTrader('1234','dycy')
 #当日委托
 print(user.update_order()) 
 #当日成交

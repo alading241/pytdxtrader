@@ -110,6 +110,23 @@ class TdxTrader:
     'title_re':'安信'\
     ,'order_status_str':{'done':'已成交','canceled':'已撤单已撤','pending':'已申报'}\
     }
+    
+    config['dycy']={\
+    'lOrderColumn':[{'text':'委托日期','key':'date'},{'text':'委托时间','key':'time'},{'text':'证券代码','key':'symbol'}\
+    ,{'text':'证券名称','key':'name'},{'text':'买卖标志','key':'direction'},{'text':'委托价格','key':'price'}\
+    ,{'text':'委托数量','key':'volume'},{'text':'委托编号','key':'exchange_order_id'},{'text':'成交数量','key':'volume_traded'}\
+    ,{'text':'撤单数量','key':'volume_canceled'},{'text':'状态说明','key':'status1'},{'text':'撤单标志','key':'status'}\
+    ,{'text':'股东代码','key':'account_id'},{'text':'操作日期','key':'op_date'},{'text':'信息说明','key':'content'}\
+    ],\
+    'lTradeColumn':[{'text':'成交日期','key':'date'},{'text':'成交时间','key':'time'},{'text':'证券代码','key':'symbol'}\
+    ,{'text':'证券名称','key':'name'},{'text':'买卖标志','key':'direction'},{'text':'委托价格','key':'price'},{'text':'委托数量','key':'order_volume'}\
+    ,{'text':'委托编号','key':'exchange_order_id'},{'text':'成交价格','key':'price'},{'text':'成交数量','key':'volume_traded'}\
+    ,{'text':'成交金额','key':'amount'},{'text':'成交编号','key':'trade_id'},{'text':'股东代码','key':'holder_id'},{'text':'状态说明','key':'status'}
+    ,{'text':'信息说明','key':'comment'}\
+    ],\
+    'title_re':'第一创业'\
+    ,'order_status_str':{'done':'已成交','canceled':'已撤单已撤','pending':'已申报'}\
+    }
 
     def __init__(self, id, broker):
         if broker == 'axtdx':
@@ -120,6 +137,8 @@ class TdxTrader:
             broker = 'xnzq'
         elif broker == '':
             broker = 'hbzq'
+        elif broker == 'dycytdx':
+            broker = 'dycy'
         if (broker in self.config) == False:
             print('暂时不支持此券商,请自己添加config配置信息')
             return 
