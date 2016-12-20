@@ -44,6 +44,41 @@ class TdxTrader:
     order_status_str_ = {}
     
     config = {}
+    config['zszq'] = {'lOrderColumn':[
+    {'text':'证券名称','key':'name'},
+    {'text':'买卖标志','key':'direction'},
+    {'text':'委托价格','key':'price'},
+    {'text':'委托数量','key':'volume'},
+    {'text':'成交价格','key':'traded_price'},
+    {'text':'成交数量','key':'volume_traded'},
+    {'text':'状态说明','key':'status'},
+    {'text':'委托时间','key':'time'},
+    {'text':'委托编号','key':'exchange_order_id'},
+    {'text':'证券代码','key':'symbol'},
+    {'text':'股东代码','key':'account_id'},
+    {'text':'报价方式','key':'price_type'},
+    {'text':'委托方式','key':'order_type'},
+    {'text':'委托序号','key':'order_seq'},
+    {'text':'备注','key':'comment'}
+    ],
+    'lTradeColumn':[
+    {'text':'证券名称','key':'name'},
+    {'text':'市场','key':'market'},
+    {'text':'成交时间','key':'time'},
+    {'text':'买卖标志','key':'direction'},
+    {'text':'成交价格','key':'price'},
+    {'text':'成交数量','key':'volume'},
+    {'text':'成交金额','key':'amount'},
+    {'text':'成交编号','key':'trade_id'},
+    {'text':'委托编号','key':'exchange_order_id'},
+    {'text':'证券代码','key':'symbol'},
+    {'text':'股东代码','key':'account_id'},
+    {'text':'起始序号','key':'start_seq'}
+    ],
+    'title_re':'招商证券'
+    ,'order_status_str':{'done':'已成交','canceled':'已撤单已撤,场内撤单','pending':'已报,撤单已发,正报'}
+    }
+
     config['hbzq'] = {'lOrderColumn':[{'text':'委托时间','key':'time'},\
     {'text':'股东代码','key':'account_id'}\
     ,{'text':'证券代码','key':'symbol'}\
