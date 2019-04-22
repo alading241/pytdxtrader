@@ -6,7 +6,7 @@ manipulate tdx by python.
 
 # 讨论
   QQ群277699808
-  
+  另一个交易相关的项目 https://github.com/mineralres/goshare
 
 #通达信版本:v6
   现支持 华宝证券，西南证券，安信证券，招商证券通达信
